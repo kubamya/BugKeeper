@@ -63,10 +63,22 @@ export default {
       },
       //跳转到人员管理
       goStaffManage(){
+            this.$notify({
+                title: '提示',
+                message: '此模块暂未开放！',
+                type: 'warning'
+            });
+            return;
           this.$router.push({path:'/staffManage'});
       },
       //跳转到系统设置
       goSystemSetting(){
+          this.$notify({
+                title: '提示',
+                message: '此模块暂未开放！',
+                type: 'warning'
+            });
+            return;
           this.$router.push({path:'/systemSetting'});
       }
     }
