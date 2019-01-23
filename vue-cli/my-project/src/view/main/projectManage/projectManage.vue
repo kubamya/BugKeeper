@@ -9,9 +9,12 @@
                             <span>当前锁定的项目：</span>
                             <el-input v-model="lockedProjectMc" disabled></el-input>
                             <el-input v-model="lockedProjectBh" disabled></el-input>
+                            
                         </div>
                         <div class="myProjectList">
-                            <div class="myProjectListTitle">我的执行中项目</div>
+                            <div class="myProjectListTitle">我的执行中项目
+                                <el-button type="primary" icon="el-icon-edit" round style="margin-left:10px;">添加执行中项目</el-button>
+                            </div>
                             <div class="myProjectTable">
                                 <el-table :data="myProjectTable" border style="text-align: center;" highlight-current-row tooltip-effect="dark">
                                     <el-table-column prop="bh" label="项目编号"></el-table-column>
@@ -54,8 +57,66 @@
                         </el-form>
                     </div>
                 </el-tab-pane>
-                <el-tab-pane label="变更项目">暂未开放</el-tab-pane>
-                <el-tab-pane label="结束项目">暂未开放</el-tab-pane>
+                <el-tab-pane label="变更项目">
+                    <div class="updateProject">
+                        <div class="updateProjectSearch">
+                            <el-row>
+                                <el-col :span="8">
+                                    <el-input placeholder="项目名称"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <el-input placeholder="项目编号"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+                                </el-col>
+                            </el-row>
+                        </div>
+                        <div class="updateProjectList">
+                            <el-table :data="updateProjectTable" border style="text-align: center;" highlight-current-row tooltip-effect="dark">
+                                <el-table-column prop="bh" label="项目编号"></el-table-column>
+                                    <el-table-column prop="mc" label="项目名称"></el-table-column>
+                                    <el-table-column prop="xmjl" label="项目经理"></el-table-column>
+                                    <el-table-column prop="cjrq" label="创建日期"></el-table-column>
+                                    <el-table-column label="操作">
+                                        <template slot-scope="scope">
+                                            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+                                        </template>
+                                    </el-table-column>
+                            </el-table>
+                        </div>
+                    </div>
+                </el-tab-pane>
+                <el-tab-pane label="结束项目">
+                    <div class="finishProject">
+                        <div class="finishProjectSearch">
+                            <el-row>
+                                <el-col :span="8">
+                                    <el-input placeholder="项目名称"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <el-input placeholder="项目编号"></el-input>
+                                </el-col>
+                                <el-col :span="8">
+                                    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+                                </el-col>
+                            </el-row>
+                        </div>
+                        <div class="finishProjectList">
+                            <el-table :data="finishProjectTable" border style="text-align: center;" highlight-current-row tooltip-effect="dark">
+                                <el-table-column prop="bh" label="项目编号"></el-table-column>
+                                    <el-table-column prop="mc" label="项目名称"></el-table-column>
+                                    <el-table-column prop="xmjl" label="项目经理"></el-table-column>
+                                    <el-table-column prop="cjrq" label="创建日期"></el-table-column>
+                                    <el-table-column label="操作">
+                                        <template slot-scope="scope">
+                                            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+                                        </template>
+                                    </el-table-column>
+                            </el-table>
+                        </div>
+                    </div>
+                </el-tab-pane>
             </el-tabs>
         </div>        
     </div>
@@ -64,6 +125,10 @@
 export default {
     data(){
         return{
+            //项目结束数据
+            finishProjectTable:[],
+            //项目变更数据
+            updateProjectTable:[],
             //我的项目数据
             myProjectTable:[],//我的执行中项目表格数据
             lockedProjectMc:'',//当前锁定的项目名称
@@ -169,4 +234,10 @@ export default {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    /*.newProject{
+        width: 40%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+    }*/
 </style>
