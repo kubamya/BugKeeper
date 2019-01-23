@@ -26,10 +26,10 @@
                     <el-menu-item index="3" @click="goStaffManage">
                         <span>人员管理</span>
                     </el-menu-item>
-                    <el-menu-item index="3" @click="goDataAnalysis">
+                    <el-menu-item index="4" @click="goDataAnalysis">
                         <span>数据分析</span>
                     </el-menu-item>
-                    <el-menu-item index="4" @click="goSystemSetting">
+                    <el-menu-item index="5" @click="goSystemSetting">
                         <span>系统设置</span>
                     </el-menu-item>
                 </el-menu>
@@ -66,12 +66,12 @@ export default {
       },
       //跳转到人员管理
       goStaffManage(){
-            this.$notify({
-                title: '提示',
-                message: '此模块暂未开放！',
-                type: 'warning'
-            });
-            return;
+            // this.$notify({
+            //     title: '提示',
+            //     message: '此模块暂未开放！',
+            //     type: 'warning'
+            // });
+            // return;
           this.$router.push({path:'/staffManage'});
       },
       //跳转到系统设置
