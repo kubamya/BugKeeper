@@ -11,6 +11,8 @@ import projectManage from '@/view/main/projectManage/projectManage.vue'
 import staffManage from '@/view/main/staffManage/staffManage.vue'
 //系统设置
 import systemSetting from '@/view/main/systemSetting/systemSetting.vue'
+//统计分析
+import dataAnalysis from '@/view/main/dataAnalysis/dataAnalysis.vue'
 
 Vue.use(Router)
 
@@ -40,6 +42,11 @@ export default new Router({
           path: '/systemSetting',
           name: 'systemSetting',
           component: systemSetting
+        },
+        {
+          path: '/dataAnalysis',
+          name: 'dataAnalysis',
+          component: dataAnalysis
         }
       ]
     },

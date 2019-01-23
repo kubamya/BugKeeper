@@ -26,6 +26,9 @@
                     <el-menu-item index="3" @click="goStaffManage">
                         <span>人员管理</span>
                     </el-menu-item>
+                    <el-menu-item index="3" @click="goDataAnalysis">
+                        <span>数据分析</span>
+                    </el-menu-item>
                     <el-menu-item index="4" @click="goSystemSetting">
                         <span>系统设置</span>
                     </el-menu-item>
@@ -80,6 +83,16 @@ export default {
             });
             return;
           this.$router.push({path:'/systemSetting'});
+      },
+      //跳转到数据分析
+      goDataAnalysis(){
+          this.$notify({
+                title: '提示',
+                message: '此模块暂未开放！',
+                type: 'warning'
+            });
+            return;
+          this.$router.push({path:'/dataAnalysis'});
       }
     }
 }
