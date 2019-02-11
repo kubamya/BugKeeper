@@ -1,9 +1,7 @@
 <template>
     <div class="userSign" style="background:#999">
-    <!--img src="../../assets/imgs/iSearch.jpg">
-       <div class="formArea">
-			
-       </div-->
+        <img src="../../assets/imgs/loginBg.jpg">
+       
        <div class="formArea">
        <el-tabs type="border-card" style="height:100%;">
             <el-tab-pane label="用户登录">
