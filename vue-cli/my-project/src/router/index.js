@@ -14,6 +14,9 @@ import systemSetting from '@/view/main/systemSetting/systemSetting.vue'
 //统计分析
 import dataAnalysis from '@/view/main/dataAnalysis/dataAnalysis.vue'
 
+
+import pdf from '@/view/pdf.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -59,6 +62,11 @@ export default new Router({
       path: '/userSign',
       name: 'userSign',
       component: userSign
+    },
+    {
+      path: '/pdf',
+      name: 'pdf',
+      component: pdf
     }
   ]
 })

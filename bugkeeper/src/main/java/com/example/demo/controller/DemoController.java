@@ -1,12 +1,14 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.DemoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.service.DemoService;
 
 /**
  * @version 1.0
@@ -24,7 +26,8 @@ public class DemoController {
 
     @ResponseBody
     @RequestMapping("/getInfo")
-    public List<Map<String, Object>> getInfo(){
+    public List<Map<String, Object>> getInfo() {
+        System.out.println("11111111");
         return demoService.getInfo();
     }
 }
