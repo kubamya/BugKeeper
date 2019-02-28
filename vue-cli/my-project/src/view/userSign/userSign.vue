@@ -12,7 +12,7 @@
                     <el-form-item label="密码" prop="password">
                         <el-input type="password" v-model="loginRuleForm.password"></el-input>
                     </el-form-item>
-                    <el-button type="primary">登录</el-button>
+                    <el-button type="primary" @click="login">登录</el-button>
                 </el-form>
             </el-tab-pane>
             <el-tab-pane label="注册账号">
@@ -88,7 +88,37 @@ export default {
         };
     },
     methods:{
+        //用户登录
+        login(){
+            //组装参数
+            // var params = {
+            //     loginid : this.loginRuleForm.username,
+            //     password : this.loginRuleForm.password
+            // };
+            var params = new URLSearchParams();
+            params.append('loginid', this.loginRuleForm.username);
+            params.append('password', this.loginRuleForm.password);
+            //发送后台请求
+             this.$axios({method:'post',url: 'http://localhost:8082/user/login', data: params}).then(
+                 response =>{
+                     if(response.status == 200){
+                         //请求成功
+                         var xm_temp = response.data[0].xm;
+                         var userBh_temp = response.data[0].bh;
+                         this.$router.push({
+                             path:'/main',
+                             params:{
+                                 xm: xm_temp,
+                                 userBh: userBh_temp
+                             }
+                        });//跳转到主页
 
+                     }else{
+                         //请求失败
+                     }
+                 }
+             );
+        }
     }
 }
 </script>

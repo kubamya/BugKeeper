@@ -15,8 +15,6 @@ import systemSetting from '@/view/main/systemSetting/systemSetting.vue'
 import dataAnalysis from '@/view/main/dataAnalysis/dataAnalysis.vue'
 
 
-import pdf from '@/view/pdf.vue'
-
 Vue.use(Router)
 
 export default new Router({
@@ -62,11 +60,6 @@ export default new Router({
       path: '/userSign',
       name: 'userSign',
       component: userSign
-    },
-    {
-      path: '/pdf',
-      name: 'pdf',
-      component: pdf
     }
   ]
 })

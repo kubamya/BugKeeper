@@ -7,6 +7,12 @@ import router from './router'
 //引入element
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import VueResource from 'vue-resource'
+
+import axios from 'axios';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+Vue.prototype.$axios = axios;
+Vue.use(VueResource);
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 Vue.use(ElementUI);
 import {

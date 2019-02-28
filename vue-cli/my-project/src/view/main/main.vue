@@ -5,7 +5,7 @@
             <div class="title">BUGKEEPER - 缺陷管理系统</div>
             <div class="userInfo">
                 <el-row>
-                    <el-col :span="12">欢迎您：</el-col>
+                    <el-col :span="12">欢迎您：{{userXm}}</el-col>
                     <el-col :span="12">退出系统</el-col>
                 </el-row>
             </div>
@@ -48,21 +48,41 @@
 export default {
     data(){
         return {
-
+            userXm:"",
+            userBh:""
         }
     },
     mounted() {
+        //取得路由传递的参数并设置对应的数据
+        this.userXm = this.$route.params.xm;
+        this.userBh = this.$route.params.userBh;
+        console.log(this.$route.params);
         //默认进入缺陷管理页面
-        this.$router.push({path:'/bugManage'});
+        this.$router.push({
+            path:'/bugManage',
+            params:{
+                userBh: this.userBh
+            }
+        });
     },
      methods: {
          //跳转到缺陷管理
       goBugManage(){
-          this.$router.push({path:'/bugManage'});
+          this.$router.push({
+              path:'/bugManage',
+              params:{
+                userBh: this.userBh
+            }
+            });
       },
       //跳转到项目管理
       goProjectManage(){
-          this.$router.push({path:'/projectManage'});
+          this.$router.push({
+              path:'/projectManage',
+              params:{
+                userBh: this.userBh
+            }
+              });
       },
       //跳转到人员管理
       goStaffManage(){
@@ -72,7 +92,9 @@ export default {
             //     type: 'warning'
             // });
             // return;
-          this.$router.push({path:'/staffManage'});
+          this.$router.push({path:'/staffManage',params:{
+                userBh: this.userBh
+            }});
       },
       //跳转到系统设置
       goSystemSetting(){
@@ -82,7 +104,9 @@ export default {
                 type: 'warning'
             });
             return;
-          this.$router.push({path:'/systemSetting'});
+          this.$router.push({path:'/systemSetting',params:{
+                userBh: this.userBh
+            }});
       },
       //跳转到数据分析
       goDataAnalysis(){
@@ -92,7 +116,9 @@ export default {
                 type: 'warning'
             });
             return;
-          this.$router.push({path:'/dataAnalysis'});
+          this.$router.push({path:'/dataAnalysis',params:{
+                userBh: this.userBh
+            }});
       }
     }
 }
