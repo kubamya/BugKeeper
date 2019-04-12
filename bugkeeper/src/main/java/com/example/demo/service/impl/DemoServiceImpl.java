@@ -25,4 +25,30 @@ public class DemoServiceImpl implements DemoService {
     public List<Map<String, Object>> getInfo() {
         return demoMapper.getInfo();
     }
+
+	@Override
+	public List<Map<String, Object>> getUserInfo(Map<String, Object> queryParams) {
+		return demoMapper.getUserInfo(queryParams);
+	}
+
+	@Override
+	public boolean addUser(Map<String, Object> queryParams) {
+		try {
+			demoMapper.addUser(queryParams);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
+
+	@Override
+	public boolean delUser(Map<String, Object> queryParams) {
+		try {
+			demoMapper.delUser(queryParams);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }

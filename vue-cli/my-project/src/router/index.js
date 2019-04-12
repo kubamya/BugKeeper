@@ -14,11 +14,25 @@ import systemSetting from '@/view/main/systemSetting/systemSetting.vue'
 //统计分析
 import dataAnalysis from '@/view/main/dataAnalysis/dataAnalysis.vue'
 
+//demo
+import binding from '@/view/demo/binding.vue'
+import demo from '@/view/demo/demo.vue'
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/demo',
+      name: 'demo',
+      component: demo
+    },
+    {
+      path: '/binding',
+      name: 'binding',
+      component: binding
+    },
     {
       path: '/main',
       name: 'main',
