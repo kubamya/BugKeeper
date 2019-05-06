@@ -26,7 +26,7 @@
                     <el-form-item label="确认密码" prop="passwordConfirm">
                         <el-input type="password" v-model="registerRuleForm.passwordConfirm"></el-input>
                     </el-form-item>
-                    <el-button type="primary">登录</el-button>
+                    <el-button type="primary">注册</el-button>
                 </el-form>
             </el-tab-pane>
         </el-tabs>
@@ -122,7 +122,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scope>
     .userSign{
 			width: 100%;
 			height: 100%;
