@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
-@MapperScan("com.example.demo.mapper")
+@MapperScan("com.example.*.mapper")
 public class DemoApplication extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
